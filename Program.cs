@@ -1,7 +1,7 @@
 ﻿namespace Board_Game
 {
 
-    //Version 2: Players board position control
+    //Version 3: Add CPU as a player 
     internal class Program
     {
         static void Main(string[] args)
@@ -13,24 +13,28 @@
             while (true)
             {
                 int playerPosition = 0;
+                int cpuPosition = 0;
+
                 bool gameisrunning = true;
 
                 while (gameisrunning)
                 {
 
-                    MenuDisplay();
+                    //Player playing
+                    MenuDisplay("Player");
 
-                    int diceNumber = RollingTheDice();
+                    int playerDiceNumber = RollingTheDice();
 
-                    DiceNumber(diceNumber);
+                    DiceNumber(playerDiceNumber);
 
-                    playerPosition += diceNumber;
+                    playerPosition += playerDiceNumber;
 
                     if (playerPosition >= finishline)
                     {
                         Console.WriteLine("Congratulations, you crossed the finish line!");
                     
                         gameisrunning = false;
+                        continue;
                     
                     }
 
@@ -39,7 +43,31 @@
 
                     Console.WriteLine("Press ENTER to continue.");
                     Console.ReadLine();
-                
+
+                    //CPU playing
+                    MenuDisplay("CPU");
+
+                    int cpuDiceNumber = RollingTheDice();
+
+                    DiceNumber(cpuDiceNumber);
+
+                    cpuPosition += cpuDiceNumber;
+
+                    if (playerPosition >= finishline)
+                    {
+                        Console.WriteLine("Oh no!! CPU crossed the finish line!");
+
+                        gameisrunning = false;
+                        continue;
+
+                    }
+
+                    else
+                        Console.WriteLine($"CPU position is: {cpuPosition} of {finishline}");
+
+                        Console.WriteLine("Press ENTER to continue.");
+                        Console.ReadLine();
+
                 }
 
                 string continueOption = MenuDisplayContinue();
@@ -49,15 +77,21 @@
             }
         }
 
-        static void MenuDisplay()
+        static void MenuDisplay(string whoIsPlaying)
         {
+            Console.Clear();
             Console.WriteLine("----------------------------------");
             Console.WriteLine("Board Game");
             Console.WriteLine("----------------------------------");
+            Console.WriteLine($"{whoIsPlaying}'s turn");
 
-            Console.WriteLine("Press ENTER to roll the dice");
-            Console.ReadLine();
+            
 
+            if (whoIsPlaying != "CPU")
+            {
+                Console.WriteLine("Press ENTER to roll the dice");
+                Console.ReadLine();
+            }
         }
 
         static int RollingTheDice()
@@ -73,6 +107,8 @@
             Console.WriteLine("----------------------------------");
             Console.WriteLine($"Dice Number is: {diceNumber}");
             Console.WriteLine("----------------------------------");
+
+          
         }
 
         static string MenuDisplayContinue()
