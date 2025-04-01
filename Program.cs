@@ -1,20 +1,46 @@
 ﻿namespace Board_Game
 {
 
-    //Version 1: Structure and dices simulation
+    //Version 2: Players board position control
     internal class Program
     {
         static void Main(string[] args)
         {
+
+            const int finishline = 30;
+
+
             while (true)
             {
+                int playerPosition = 0;
+                bool gameisrunning = true;
 
-                MenuDisplay();
+                while (gameisrunning)
+                {
 
-                int diceNumber = RollingTheDice();
+                    MenuDisplay();
 
-                DiceNumber(diceNumber); 
+                    int diceNumber = RollingTheDice();
 
+                    DiceNumber(diceNumber);
+
+                    playerPosition += diceNumber;
+
+                    if (playerPosition >= finishline)
+                    {
+                        Console.WriteLine("Congratulations, you crossed the finish line!");
+                    
+                        gameisrunning = false;
+                    
+                    }
+
+                    else
+                        Console.WriteLine($"Player position is: {playerPosition} of {finishline}");
+
+                    Console.WriteLine("Press ENTER to continue.");
+                    Console.ReadLine();
+                
+                }
 
                 string continueOption = MenuDisplayContinue();
 
@@ -51,6 +77,7 @@
 
         static string MenuDisplayContinue()
         {
+            Console.WriteLine("----------------------------------");
             Console.WriteLine("Do you want to continue? (Y/N) ");
 
             string continueOption = Console.ReadLine()!.ToUpper();
