@@ -46,7 +46,7 @@
                     if (playerPosition == 11 || playerPosition == 16 || playerPosition == 21)
                     {
 
-                        Console.WriteLine("Bonus: Advance 3 houses");
+                        Console.WriteLine("Bonus: Advance 3 spaces");
                         Console.WriteLine();
 
                         playerPosition += 3;
@@ -55,7 +55,7 @@
                     }
                     else if (playerPosition == 13 || playerPosition == 19 || playerPosition == 22)
                     {
-                        Console.WriteLine("Bad luck: Go back 2 houses");
+                        Console.WriteLine("Bad luck: Go back 2 spaces");
                         Console.WriteLine();
 
                         playerPosition += -2;
@@ -81,14 +81,14 @@
                             if (playerPosition == 11 || playerPosition == 16 || playerPosition == 21)
                             {
 
-                                Console.WriteLine("Bonus: Advance 3 houses ");
+                                Console.WriteLine("Bonus: Advance 3 spaces ");
                                 Console.WriteLine();
 
                                 playerPosition += 3;
                             }
                             else if (playerPosition == 13 || playerPosition == 19 || playerPosition == 22)
                             {
-                                Console.WriteLine("Bad luck: Go back 2 houses");
+                                Console.WriteLine("Bad luck: Go back 2 spaces");
                                 Console.WriteLine();
 
                                 playerPosition += -2;
@@ -123,7 +123,7 @@
                     if (cpuPosition == 11 || cpuPosition == 16 || cpuPosition == 21)
                     {
 
-                        Console.WriteLine("Bonus: Advance 3 houses");
+                        Console.WriteLine("Bonus: Advance 3 spaces");
                         Console.WriteLine();
 
                         cpuPosition += 3;
@@ -132,7 +132,7 @@
                     }
                     else if (cpuPosition == 13 || cpuPosition == 19 || cpuPosition == 22)
                     {
-                        Console.WriteLine("Bad luck: Go back 2 houses");
+                        Console.WriteLine("Bad luck: Go back 2 spaces");
                         Console.WriteLine();
 
                         cpuPosition += -2;
@@ -155,14 +155,14 @@
                             if (cpuPosition == 11 || cpuPosition == 16 || cpuPosition == 21)
                             {
 
-                                Console.WriteLine("Bonus: Advance 3 houses ");
+                                Console.WriteLine("Bonus: Advance 3 spaces");
                                 Console.WriteLine();
 
                                 cpuPosition += 3;
                             }
                             else if (cpuPosition == 13 || cpuPosition == 19 || cpuPosition == 22)
                             {
-                                Console.WriteLine("Bad luck: Go back 2 houses");
+                                Console.WriteLine("Bad luck: Go back 2 spaces");
                                 Console.WriteLine();
 
                                 cpuPosition += -2;
