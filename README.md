@@ -2,7 +2,7 @@
 
 Welcome to the Board Game! This is a simple console-based board game where you compete against a CPU by rolling dice to move along a board, with various events that may help or hinder your progress.
 
-## Features:
+## Features: 
 - Players and the CPU take turns rolling a 6-sided dice.
 - Special events occur when you land on specific positions:
   - **Bonus**: Advance 3 spaces.
